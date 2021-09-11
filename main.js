@@ -17,6 +17,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
 const material = new THREE.MeshStandardMaterial({ color: 0xff6347})
 const torus = new THREE.Mesh(geometry, material)
+torus.position.x = -5;
+torus.position.y = -1;
+torus.position.z = -2;
 
 scene.add(torus);
 
@@ -84,9 +87,13 @@ document.body.onscroll = moveCamera
 
 function animate() {
   requestAnimationFrame(animate);
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.1;
+  torus.rotation.x += .01;
+  torus.rotation.y += .015;
+  torus.rotation.z += .015;
+
+  moon.rotation.x += 0.0005;
+  moon.rotation.y += 0.0075;
+  moon.rotation.z += 0.0005;
 
   controls.update()
 
