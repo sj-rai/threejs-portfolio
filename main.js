@@ -39,11 +39,11 @@ const controls = new OrbitControls(camera, renderer.domElement)
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24)
-  const material = new THREE.MeshStandardMaterial({ color: 0xff6347})
+  const material = new THREE.MeshStandardMaterial({ color: 0xe234fe})
   const star = new THREE.Mesh(geometry, material)
 
   const [x, y, z] = Array(3).fill().map(() => {
-    return THREE.MathUtils.randFloatSpread(100)
+    return THREE.MathUtils.randFloatSpread(80)
   })
   // const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100))
   console.log('[x,y,z]', x,y,z)
@@ -51,7 +51,7 @@ function addStar() {
   scene.add(star)
 }
 addStar()
-Array(200).fill().forEach(addStar)
+Array(140).fill().forEach(addStar)
 
 const spaceTexture = new THREE.TextureLoader().load('gradient.old.png')
 scene.background = spaceTexture
